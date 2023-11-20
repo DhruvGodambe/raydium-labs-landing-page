@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #90D301;
   font-family: Poppins;
@@ -302,6 +306,11 @@ a {
   font-size: 16px;
 }
 
+.contact-button-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .contact-button-container button {
   border: none;
   background: #90D301;
@@ -310,7 +319,7 @@ a {
   color: white;
   letter-spacing: 2px;
   border-radius: 10px;
-  margin-left: 55%;
+  margin-right: 12%;
 }
 
 ::placeholder {
@@ -464,6 +473,11 @@ a {
     margin: 0 auto;
   }
 
+  .contact-button-container button {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+
   .aesthetic-box {
     height: auto;
     display: none;
@@ -524,7 +538,7 @@ a {
 
   .navbar-links li {
     font-size: 14px;
-    margin: 0 15px;
+    margin: 0 10px;
   }
 
   .top-image-container {
@@ -556,6 +570,11 @@ a {
 
   .contact-form-container {
     width: 100%;
+  }
+
+  .contact-button-container button {
+    padding: 10px;
+    font-size: 12px;
   }
 
   .footer-main-container {
