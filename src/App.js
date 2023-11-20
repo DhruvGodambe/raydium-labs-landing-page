@@ -70,11 +70,21 @@ function App() {
           </div>
           <div className='project-list-container'>
             <div className='project-list'>
-              <div className='project-list-item'><img src='project-image-1.png'/></div>
-              <div className='project-list-item'><img src='project-image-2.png'/></div>
-              <div className='project-list-item' style={{width: "10%"}}><img src='project-image-3.png'/></div>
-              <div className='project-list-item'><img src='project-image-4.png'/></div>
-              <div className='project-list-item'><img src='project-image-5.png'/></div>
+              <div className='project-list-item'>
+                <a href='https://biopharmaawards.imapac.com/' target="_blank"><img src='project-image-1.png'/></a>
+              </div>
+              <div className='project-list-item'>
+                <a href='https://navdivyangfoundation.in/' target="_blank"><img src='project-image-2.png'/></a>
+              </div>
+              <div className='project-list-item' style={{width: "10%"}}>
+                <a href='https://hyperweb.ai/' target="_blank"><img src='project-image-3.png'/></a>
+              </div>
+              <div className='project-list-item'>
+                <a href='https://www.goyaana.com/landing' target="_blank"><img src='project-image-4.png'/></a>
+              </div>
+              <div className='project-list-item'>
+                <a href='https://enochdev.com/en' target="_blank"><img src='project-image-5.png'/></a>
+              </div>
             </div>
           </div>
         </div>
