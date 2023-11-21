@@ -36,14 +36,13 @@ a {
 
 .navbar-links {
   margin: auto 0;
-  color: white;
+  color: black;
 }
 
 .navbar-links ul {
   display: flex;
   flex-direction: row;
   list-style: none;
-
 }
 
 .navbar-links li {
@@ -132,6 +131,19 @@ a {
 
 .service-item-heading img {
   width: 5%;
+}
+
+.service-item-description {
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 22px;
+  font-weight: lighter;
+  display: none;
+}
+
+.service-item-description.show {
+  display: block;
+  animation: slideDown 1s ease forwards;
 }
 
 
@@ -457,7 +469,20 @@ a {
 }
 
 
+@keyframes slideDown {
+  from {
+    transform: translateY(-25%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 @media only screen and (max-width: 1100px) {
+
+  .service-item-description {
+    font-size: 18px;
+  }
 
   .project-list-item {
     max-width: 45%;
@@ -518,6 +543,10 @@ a {
 }
 
 @media only screen and (max-width: 800px) {
+
+  .service-item-description {
+    font-size: 16px;
+  }
 
   .project-list-item {
     max-width: 70%;
