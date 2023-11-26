@@ -218,7 +218,7 @@ function App() {
                 </a>
               </div>
               <div className="project-list-item">
-                <a href="https://enochdev.com/en" target="_blank">
+                <a href="https://enoch.app/en" target="_blank">
                   <img src="project-image-5.png" />
                 </a>
               </div>
