@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
+import { motion, useScroll, useTransform } from "framer-motion"
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,6 +20,17 @@ function App() {
   const [showService2, setShowService2] = useState(false);
   const [showService3, setShowService3] = useState(false);
   const [showService4, setShowService4] = useState(false);
+
+  const serviceHeaderRef = useRef();
+  const serviceYProgress = useScroll({
+    target: serviceHeaderRef,
+    offset: ["0 1", "1.33 1"]
+  })
+  const serviceX = useTransform(serviceYProgress.scrollYProgress, [0, 1], [-1000, 0])
+
+  useEffect(() => {
+    console.log(serviceYProgress)
+  }, [serviceYProgress])
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
@@ -57,20 +69,43 @@ function App() {
       >
         <Navbar />
 
-        <div className="top-image-container">
-          <img src="first-section-image.png" />
-        </div>
-        <div className="section-1-heading">
+        <motion.div
+          initial={{ opacity: 0}}
+          animate={{ opacity: 1}}
+          transition={{ duration: 0.5}}
+        >
+          <div className="top-image-container">
+            <img src="first-section-image.png" />
+          </div>
+        </motion.div>
+        <motion.div
+          className="section-1-heading"
+          initial={{ opacity: 0}}
+          animate={{ opacity: 1}}
+          transition={{ delay: 0.5, duration: 0.5}}
+        >
           <img src="top-heading.png" />
-        </div>
-        <div className="section-1-sub-section">
-          <img src="second-heading.png" />
-        </div>
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{opacity: 1, scale: 1}}
+          transition={{duration: 1.5}}
+          >  
+          <div className="section-1-sub-section">
+            <img src="second-heading.png" />
+          </div>
+        </motion.div>
       </div>
 
       <div id="services" className="services-section">
         <div className="services-heading">
-          <p>SERVICES</p>
+          <motion.p
+            style={{
+              x: serviceX,
+              opacity: serviceYProgress.scrollYProgress
+            }}
+            ref={serviceHeaderRef}
+            >SERVICES</motion.p>
         </div>
         <div className="services-list">
           <div className="service-item">
@@ -83,20 +118,23 @@ function App() {
                 }}
               />
             </div>
-            <div
-              className={`service-item-description ${
-                showService1 ? "show" : ""
-              }`}
-            >
-              Our team focuses on developing a cohesive brand strategy that
-              includes logo design, color schemes, typography, and overall
-              visual aesthetics. We work closely with you to understand your
-              business values, target audience, and market position, ensuring
-              that your brand effectively communicates your business’s unique
-              story and values. This service is essential for establishing a
-              strong, memorable presence in the market, distinguishing you from
-              competitors and building customer loyalty.
-            </div>
+            {showService1 && (
+              <motion.div
+                initial={{opacity: 0, y: '-5vh'}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{ duration: 0.8}}
+                className={`service-item-description`}
+              >
+                Our team focuses on developing a cohesive brand strategy that
+                includes logo design, color schemes, typography, and overall
+                visual aesthetics. We work closely with you to understand your
+                business values, target audience, and market position, ensuring
+                that your brand effectively communicates your business’s unique
+                story and values. This service is essential for establishing a
+                strong, memorable presence in the market, distinguishing you from
+                competitors and building customer loyalty.
+              </motion.div>
+            )}
             <hr />
           </div>
           <div className="service-item">
@@ -109,11 +147,13 @@ function App() {
                 }}
               />
             </div>
-            <div
-              className={`service-item-description ${
-                showService2 ? "show" : ""
-              }`}
-            >
+            {showService2 && (
+              <motion.div
+                initial={{opacity: 0, y: '-5vh'}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{ duration: 0.8}}
+                className={`service-item-description`}
+              >
               Our UI/UX design service involves crafting visually appealing and
               easy-to-navigate interfaces for websites and applications. We
               focus on understanding user behavior to create a seamless and
@@ -122,7 +162,8 @@ function App() {
               accessibility and responsiveness across various devices. Our goal
               is to enhance user satisfaction and maximize usability, ultimately
               driving more engagement and conversions for your business.
-            </div>
+            </motion.div>
+            )}
             <hr />
           </div>
           <div className="service-item">
@@ -135,11 +176,13 @@ function App() {
                 }}
               />
             </div>
-            <div
-              className={`service-item-description ${
-                showService3 ? "show" : ""
-              }`}
-            >
+            {showService3 && (
+              <motion.div
+                initial={{opacity: 0, y: '-5vh'}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{ duration: 0.8}}
+                className={`service-item-description`}
+              >
               Whether you need a simple website to establish your online
               presence or a complex web application to run your business
               operations, our team has the expertise to deliver. We specialize
@@ -148,7 +191,8 @@ function App() {
               functional and reliable. From e-commerce platforms to
               informational sites, we ensure that your online presence is
               powerful, scalable, and aligns with your business objectives.
-            </div>
+            </motion.div>
+            )}
             <hr />
           </div>
           <div className="service-item">
@@ -161,11 +205,13 @@ function App() {
                 }}
               />
             </div>
-            <div
-              className={`service-item-description ${
-                showService4 ? "show" : ""
-              }`}
-            >
+            {showService4 && (
+              <motion.div
+                initial={{opacity: 0, y: '-5vh'}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{ duration: 0.8}}
+                className={`service-item-description`}
+              >
               Integrating online payment gateways is crucial for businesses
               looking to conduct transactions over the internet. We provide
               secure, efficient, and user-friendly payment gateway integration
@@ -176,8 +222,9 @@ function App() {
               with payment industry standards. This service is designed to
               streamline your transaction process, reduce payment processing
               time, and enhance the overall customer purchasing experience.
-            </div>
-            <hr />
+            </motion.div>
+            )}
+            <motion.hr />
           </div>
         </div>
       </div>
@@ -191,9 +238,17 @@ function App() {
             <img src="our-project-title.png" />
           </div>
           <div className="project-description">
-            <p>THEY DREAM ABOUT IT</p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5}}
+              >THEY DREAM ABOUT IT</motion.p>
             <hr></hr>
-            <p>WE BUILD IT</p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5}}
+            >WE BUILD IT</motion.p>
           </div>
           <div className="project-list-container">
             <div className="project-list">
