@@ -329,7 +329,7 @@ a {
   color: white;
   letter-spacing: 2px;
   border-radius: 10px;
-  margin-right: 12%;
+  margin-right: 15%;
 }
 
 ::placeholder {
@@ -599,9 +599,24 @@ a {
     width: 100%;
   }
 
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-input-container input {
+    width: 85%;
+    margin: 2vw 1vw;
+    padding: 2vw;
+  }
+
+  .contact-input-container textarea {
+    width: 85%;
+  }
+
   .contact-button-container button {
     padding: 10px;
     font-size: 12px;
+    margin-right: 7.5%;
   }
 
   .footer-main-container {

@@ -224,7 +224,7 @@ function App() {
               time, and enhance the overall customer purchasing experience.
             </motion.div>
             )}
-            <motion.hr />
+            <hr />
           </div>
         </div>
       </div>
@@ -234,9 +234,13 @@ function App() {
         style={{ background: `url(${backgroundImage2})` }}
       >
         <div id="projects" className="project-section">
-          <div className="project-heading">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1}}
+            className="project-heading">
             <img src="our-project-title.png" />
-          </div>
+          </motion.div>
           <div className="project-description">
             <motion.p
               initial={{ opacity: 0 }}
@@ -288,12 +292,20 @@ function App() {
             <p>LEADERSHIP</p>
           </div>
           <div className="leadership-container">
-            <div className="leader">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.25, duration: 1}}
+              className="leader">
               <img src="leadership-dhruv.png" />
-            </div>
-            <div className="leader">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.25, duration: 1}}
+              className="leader">
               <img src="leadership-atul.png" />
-            </div>
+            </motion.div>
           </div>
         </div>
 
