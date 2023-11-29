@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
           <div className="quick-links">
             <p className="heading">Quick Links</p>
-            <p className="service">Contact Us</p>
+            <a href="#contact" className="service">Contact Us</a>
             <p className="service">Privacy Policy</p>
             <p className="service">Terms & Conditions</p>
           </div>

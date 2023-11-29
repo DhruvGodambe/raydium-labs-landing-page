@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, useMotionValue, animate } from "framer-motion"
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -10,6 +10,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import backgroundImage from "./assets/background-logo-image-1.png";
 import backgroundImage2 from "./assets/background-logo-image-2.png";
+import backgroundImage3 from './assets/hero-background.png';
+import headingDescription from "./assets/constants/hero-section-description.json"
 
 function App() {
   const [contactName, setContactName] = useState("");
@@ -29,8 +31,29 @@ function App() {
   const serviceX = useTransform(serviceYProgress.scrollYProgress, [0, 1], [-1000, 0])
 
   useEffect(() => {
-    console.log(serviceYProgress)
-  }, [serviceYProgress])
+    animate(count, 60, {
+      type: "tween",
+      duration: 1.5,
+      ease: "easeIn",
+      repeat: Infinity,
+      repeatType: "reverse",
+      repeatDelay: 0.5,
+      onUpdate(latest) {
+        if (updatedThisRound.get() === true && latest > 0) {
+          updatedThisRound.set(false);
+        } else if (updatedThisRound.get() === false && latest === 0) {
+          if (textIndex.get() === headingDescription.data.length - 1) {
+            textIndex.set(0);
+          } else {
+            textIndex.set(textIndex.get() + 1);
+          }
+          updatedThisRound.set(true);
+        }
+      }
+    });
+  }, [])
+
+
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
@@ -60,6 +83,15 @@ function App() {
     setContactMessage("");
   };
 
+  const textIndex = useMotionValue(0);
+  const baseText = useTransform(textIndex, (latest) => headingDescription.data[latest] || "");
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const displayText = useTransform(rounded, (latest) =>
+    baseText.get().slice(0, latest)
+  );
+  const updatedThisRound = useMotionValue(true);
+
   return (
     <div className="App">
       <ToastContainer />
@@ -67,28 +99,30 @@ function App() {
         className="section-1"
         style={{ background: `url(${backgroundImage})` }}
       >
-        <Navbar />
-
-        <motion.div
-          initial={{ opacity: 0}}
-          animate={{ opacity: 1}}
-          transition={{ duration: 0.5}}
-        >
-          <div className="top-image-container">
-            <img src="first-section-image.png" />
+        <div 
+          
+          style={{ background: `url(${backgroundImage3})`}}
+          >
+          <Navbar />
+          <div className="section-1-container">
+            <motion.div
+              className="section-1-heading"
+              initial={{ opacity: 0}}
+              animate={{ opacity: 1}}
+              transition={{ delay: 0.5, duration: 1}}
+            >
+              <p>DIGITIZE YOUR</p>
+              <p>BUSINESS</p>
+              <div className="section-1-description-container">
+                <motion.span className="section-1-description">{displayText}</motion.span>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-        <motion.div
-          className="section-1-heading"
-          initial={{ opacity: 0}}
-          animate={{ opacity: 1}}
-          transition={{ delay: 0.5, duration: 0.5}}
-        >
-          <img src="top-heading.png" />
-        </motion.div>
+        </div>
+
         <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{opacity: 1, scale: 1}}
+          initial={{ opacity: 0, scale: 0.7 }}
+          whileInView={{opacity: 1, scale: 0.9}}
           transition={{duration: 1.5}}
           >  
           <div className="section-1-sub-section">
