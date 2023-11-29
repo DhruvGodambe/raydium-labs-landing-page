@@ -512,6 +512,19 @@ a {
 
 @media only screen and (max-width: 1100px) {
 
+  .section-1-heading {
+    font-size: 100px;
+  }
+
+  .section-1-heading p {
+    line-height: 100px;
+  }
+
+  .section-1-heading .section-1-description {
+    font-size: 50px;
+    line-height: 80px;
+  }
+
   .service-item-description {
     font-size: 18px;
   }
@@ -575,6 +588,19 @@ a {
 }
 
 @media only screen and (max-width: 800px) {
+
+  .section-1-heading {
+    font-size: 50px;
+  }
+
+  .section-1-heading p {
+    line-height: 60px;
+  }
+
+  .section-1-heading .section-1-description {
+    font-size: 25px;
+    line-height: 40px;
+  }
 
   .service-item-description {
     font-size: 16px;

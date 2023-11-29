@@ -101,7 +101,7 @@ function App() {
       >
         <div 
           
-          style={{ background: `url(${backgroundImage3})`}}
+          style={{ background: `url(${backgroundImage3})`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}
           >
           <Navbar />
           <div className="section-1-container">
