@@ -144,7 +144,7 @@ function App() {
         <div className="services-list">
           <div className="service-item">
             <div className="service-item-heading">
-              <p>BRANDING</p>
+              <p>BOT DEVELOPMENT</p>
               <img
                 src={showService1 ? "minus-icon.png" : "plus-icon.png"}
                 onClick={() => {
@@ -159,14 +159,9 @@ function App() {
                 transition={{ duration: 0.8}}
                 className={`service-item-description`}
               >
-                Our team focuses on developing a cohesive brand strategy that
-                includes logo design, color schemes, typography, and overall
-                visual aesthetics. We work closely with you to understand your
-                business values, target audience, and market position, ensuring
-                that your brand effectively communicates your business’s unique
-                story and values. This service is essential for establishing a
-                strong, memorable presence in the market, distinguishing you from
-                competitors and building customer loyalty.
+                We build telegram bots for various purposes like crypto sniper bot,
+                market monitoring bot, arbitrage bots and much more. We have built AI
+                chat bots in the past that allows users to ask questions about a certain product or service.
               </motion.div>
             )}
             <hr />
@@ -202,7 +197,7 @@ function App() {
           </div>
           <div className="service-item">
             <div className="service-item-heading">
-              <p>BUILD A WEBSITE / BUILD AN APP</p>
+              <p>BUILD A WEBSITE / APP</p>
               <img
                 src={showService3 ? "minus-icon.png" : "plus-icon.png"}
                 onClick={() => {
@@ -231,7 +226,7 @@ function App() {
           </div>
           <div className="service-item">
             <div className="service-item-heading">
-              <p>ONLINE PAYMENT GATEWAYS</p>
+              <p>BLOCKCHAIN DEVELOPMENT</p>
               <img
                 src={showService4 ? "minus-icon.png" : "plus-icon.png"}
                 onClick={() => {
@@ -246,16 +241,12 @@ function App() {
                 transition={{ duration: 0.8}}
                 className={`service-item-description`}
               >
-              Integrating online payment gateways is crucial for businesses
-              looking to conduct transactions over the internet. We provide
-              secure, efficient, and user-friendly payment gateway integration
-              services that allow your customers to make payments through
-              various methods like credit cards, debit cards, and digital
-              wallets. Our focus is on implementing solutions that offer robust
-              security to protect sensitive financial data, ensuring compliance
-              with payment industry standards. This service is designed to
-              streamline your transaction process, reduce payment processing
-              time, and enhance the overall customer purchasing experience.
+              We specialize in blockchain development services for decentralized
+              applications (dApps) on both the Solana and Ethereum networks. Whether you're looking 
+              to build complex financial applications, innovative NFT platforms, or decentralized 
+              marketplaces, our bespoke development team 
+              ensure that your project is built to the highest standards of modern blockchain technology, 
+              optimizing performance and enhancing user experience across both platforms.
             </motion.div>
             )}
             <hr />
@@ -313,6 +304,16 @@ function App() {
               <div className="project-list-item">
                 <a href="https://enoch.app/en" target="_blank">
                   <img src="project-image-5.png" />
+                </a>
+              </div>
+              <div className="project-list-item">
+                <a href="https://league-pro.vercel.app/" target="_blank">
+                  <img src="project-image-6.png" />
+                </a>
+              </div>
+              <div className="project-list-item">
+                <a href="https://referral-program-five.vercel.app/" target="_blank">
+                  <img src="project-image-7.png" />
                 </a>
               </div>
             </div>
