@@ -32,10 +32,10 @@ export default function Footer() {
         <div className="footer-left-container">
           <div className="footer-services">
             <p className="heading">Services</p>
-            <p className="service">Branding</p>
+            <p className="service">Blockchain Development</p>
             <p className="service">UI/UX Design</p>
             <p className="service">Website & App Development</p>
-            <p className="service">Online Payment Gateways</p>
+            <p className="service">Bot Development</p>
           </div>
           <div className="quick-links">
             <p className="heading">Quick Links</p>

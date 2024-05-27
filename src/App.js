@@ -111,8 +111,8 @@ function App() {
               animate={{ opacity: 1}}
               transition={{ delay: 0.5, duration: 1}}
             >
-              <p>DIGITIZE YOUR</p>
-              <p>BUSINESS</p>
+              <p>LETS BUILD YOUR</p>
+              <p>WEB3 PROJECT</p>
               <div className="section-1-description-container">
                 <motion.span className="section-1-description">{displayText}</motion.span>
               </div>
@@ -144,7 +144,7 @@ function App() {
         <div className="services-list">
           <div className="service-item">
             <div className="service-item-heading">
-              <p>BOT DEVELOPMENT</p>
+              <p>BLOCKCHAIN DEVELOPMENT</p>
               <img
                 src={showService1 ? "minus-icon.png" : "plus-icon.png"}
                 onClick={() => {
@@ -159,9 +159,12 @@ function App() {
                 transition={{ duration: 0.8}}
                 className={`service-item-description`}
               >
-                We build telegram bots for various purposes like crypto sniper bot,
-                market monitoring bot, arbitrage bots and much more. We have built AI
-                chat bots in the past that allows users to ask questions about a certain product or service.
+                We specialize in blockchain development services for decentralized
+                applications (dApps) on both the Solana and Ethereum networks. Whether you're looking 
+                to build complex financial applications, innovative NFT platforms, or decentralized 
+                marketplaces, our bespoke development team 
+                ensure that your project is built to the highest standards of modern blockchain technology, 
+                optimizing performance and enhancing user experience across both platforms.
               </motion.div>
             )}
             <hr />
@@ -226,7 +229,7 @@ function App() {
           </div>
           <div className="service-item">
             <div className="service-item-heading">
-              <p>BLOCKCHAIN DEVELOPMENT</p>
+              <p>BOT DEVELOPMENT</p>
               <img
                 src={showService4 ? "minus-icon.png" : "plus-icon.png"}
                 onClick={() => {
@@ -241,12 +244,9 @@ function App() {
                 transition={{ duration: 0.8}}
                 className={`service-item-description`}
               >
-              We specialize in blockchain development services for decentralized
-              applications (dApps) on both the Solana and Ethereum networks. Whether you're looking 
-              to build complex financial applications, innovative NFT platforms, or decentralized 
-              marketplaces, our bespoke development team 
-              ensure that your project is built to the highest standards of modern blockchain technology, 
-              optimizing performance and enhancing user experience across both platforms.
+                We build telegram bots for various purposes like crypto sniper bot,
+                market monitoring bot, arbitrage bots and much more. We have built AI
+                chat bots in the past that allows users to ask questions about a certain product or service.
             </motion.div>
             )}
             <hr />
@@ -282,8 +282,28 @@ function App() {
           <div className="project-list-container">
             <div className="project-list">
               <div className="project-list-item">
+                <a href="https://dapp.frogbar.io" target="_blank">
+                  <img src="project-image-7.png" />
+                </a>
+              </div>
+              <div className="project-list-item">
                 <a href="https://biopharmaawards.imapac.com/" target="_blank">
                   <img src="project-image-1.png" />
+                </a>
+              </div>
+              <div className="project-list-item">
+                <a href="https://www.goyaana.com/landing" target="_blank">
+                  <img src="project-image-4.png" />
+                </a>
+              </div>
+              <div className="project-list-item">
+                <a href="https://enoch.app/stargate" target="_blank">
+                  <img src="project-image-5.png" />
+                </a>
+              </div>
+              <div className="project-list-item">
+                <a href="https://league-pro.vercel.app/" target="_blank">
+                  <img src="project-image-6.png" />
                 </a>
               </div>
               <div className="project-list-item">
@@ -294,26 +314,6 @@ function App() {
               <div className="project-list-item" style={{ width: "10%" }}>
                 <a href="https://hyperweb.ai/" target="_blank">
                   <img src="project-image-3.png" />
-                </a>
-              </div>
-              <div className="project-list-item">
-                <a href="https://www.goyaana.com/landing" target="_blank">
-                  <img src="project-image-4.png" />
-                </a>
-              </div>
-              <div className="project-list-item">
-                <a href="https://enoch.app/en" target="_blank">
-                  <img src="project-image-5.png" />
-                </a>
-              </div>
-              <div className="project-list-item">
-                <a href="https://league-pro.vercel.app/" target="_blank">
-                  <img src="project-image-6.png" />
-                </a>
-              </div>
-              <div className="project-list-item">
-                <a href="https://referral-program-five.vercel.app/" target="_blank">
-                  <img src="project-image-7.png" />
                 </a>
               </div>
             </div>
